@@ -42,11 +42,6 @@
 /* Private variables ---------------------------------------------------------*/
 UART_HandleTypeDef huart2;
 
-CAN_TxHeaderTypeDef TxHeader;
-
-uint8_t TxData[8];
-
-uint32_t TxMailbox;
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -71,18 +66,7 @@ static void MX_USART2_UART_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	TxHeader.IDE = CAN_ID_STD;
-	TxHeader.StdId = 0x446;
-	TxHeader.RTR = CAN_RTR_DATA;
-	TxHeader.DLC = 2;
 
-	TxData[0] = 50;
-	TxData[1] = 0xAA;
-
-	if (HAL_CAN_AddTxMessage(&hcan1, &TxHeader, TxData, &TxMailbox) != HAL_OK)
-	{
-		Error_Handler();
-	}
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
