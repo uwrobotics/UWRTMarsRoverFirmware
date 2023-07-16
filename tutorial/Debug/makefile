@@ -75,8 +75,8 @@ all: main-build
 main-build: tutorial.elf secondary-outputs
 
 # Tool invocations
-tutorial.elf tutorial.map: $(OBJS) $(USER_OBJS) C:\Users\Joshua\ Rayappa\STM32CubeIDE\workspace_1.12.1\tutorial\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "tutorial.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Joshua Rayappa\STM32CubeIDE\workspace_1.12.1\tutorial\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="tutorial.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+tutorial.elf tutorial.map: $(OBJS) $(USER_OBJS) /home/joshuarayappa/STM32CubeIDE/workspace_1.12.0/tutorial/STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "tutorial.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/joshuarayappa/STM32CubeIDE/workspace_1.12.0/tutorial/STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="tutorial.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
